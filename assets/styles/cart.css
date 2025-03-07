@@ -1,0 +1,23 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.cart-title {
+  color: hsl(14, 86%, 42%);
+  font-weight: 700;
+  margin-block-end: 1.5rem;
+}
+
+.cart-img {
+  width: 128px;
+  height: 128px;
+  margin-inline: auto;
+  margin-block-end: 1rem;
+}
+
+.cart-text {
+  font-size: 14px;
+  color: hsl(14, 65%, 9%);
+}
