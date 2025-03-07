@@ -1,21 +1,19 @@
 main {
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .product-container {
   display: grid;
-  grid-template-columns: 280px 280px 280px;
-  column-gap: 24px;
-  row-gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .card {
-  position: relative;
   display: flex;
-  gap: 2.4rem;
+  gap: 1.5rem;
   border: none;
-  max-width: 280px;
 }
 
 .card-img {
@@ -35,16 +33,32 @@ main {
 
 .btn {
   display: flex;
-  justify-content: space-between;
-  width: 160px;
-  position: absolute;
-  bottom: 95px;
-  left: 60px;
-  padding: 10px 26px;
+  justify-content: center;
+  gap: 15px;
   font-size: 14px;
+  font-weight: 600;
   background-color: hsl(20, 50%, 98%);
+  color: hsl(14, 65%, 9%);
   border-radius: 50px;
   border: 1px solid hsl(7, 20%, 60%);
-  color: hsl(14, 65%, 9%);
-  font-weight: 600;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    flex-direction: column;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    border-radius: 5px;
+  }
 }

@@ -15,11 +15,23 @@ body {
 }
 
 .fluid-container {
-  padding: 5.5rem 7rem;
+  padding: 5.5rem;
 }
 
 h1 {
   font-size: 40px;
   font-weight: 700;
   margin-block-end: 2rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .fluid-container {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .fluid-container {
+    padding: 1.5rem;
+  }
 }
