@@ -1,13 +1,10 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+import ProductDisplay from "./components/ProductDisplay.js";
 
 createApp({
-  template:
-    /* html */
-    `
-      <div class="container">
-        <h1>Desserts</h1>
-      </div>
-    `,
+  components: {
+    ProductDisplay,
+  },
   data() {
     return {
       data: [],
@@ -22,4 +19,10 @@ createApp({
       .catch((err) => console.error(`Error: ${err}`));
   },
   methods: {},
+  template: `
+    <div class="fluid-container">
+      <h1>Desserts</h1>
+      <product-display :productData="data"></product-display>
+    </div>
+  `,
 }).mount("#app");

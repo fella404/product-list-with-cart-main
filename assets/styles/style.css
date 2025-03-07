@@ -14,11 +14,12 @@ body {
   font-family: "rht", sans-serif;
 }
 
-.container {
-  margin: 5.5rem 7rem;
+.fluid-container {
+  padding: 5.5rem 7rem;
 }
 
 h1 {
   font-size: 40px;
   font-weight: 700;
+  margin-block-end: 2rem;
 }
