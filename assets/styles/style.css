@@ -12,10 +12,11 @@
 
 body {
   font-family: "rht", sans-serif;
+  background-color: hsl(13, 31%, 94%);
 }
 
 .fluid-container {
-  padding: 5.5rem;
+  padding: 5rem;
 }
 
 h1 {
