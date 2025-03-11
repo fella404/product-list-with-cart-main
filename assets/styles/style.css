@@ -25,14 +25,29 @@ h1 {
   margin-block-end: 2rem;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+main {
+  display: flex;
+  gap: 1.3rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .fluid-container {
     padding: 3rem;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .fluid-container {
     padding: 1.5rem;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 2rem;
   }
 }

@@ -45,9 +45,9 @@ createApp({
   },
   template: `
     <h1>Desserts</h1>
-    <div style="display: flex; gap: 1.3rem;">
-      <product-display :productData="data" @add-to-cart="addToCart" style="flex: 2;"></product-display>
+    <main>
+      <product-display :productData="data" @add-to-cart="addToCart" style="flex: 3;"></product-display>
       <cart :cart="cart" @decrement-cart="decrementCart" style="flex: 1; align-self: flex-start;"></cart>
-    </div>
+    </main>
   `,
 }).mount("#app");

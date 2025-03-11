@@ -7,7 +7,7 @@ export default {
   },
   methods: {
     decrementCart(index) {
-      this.$emit('decrement-cart', index)
+      this.$emit("decrement-cart", index);
     },
   },
   computed: {
@@ -36,17 +36,17 @@ export default {
         <div v-else>
           <ul>
             <li v-for="(item, index) in cart">
-            <div class="d-flex flex-column gap-2">
-              <h3>{{ item.name }}</h3>
-              <div class="span-group">
-                <span class="item-quantity">{{ item.quantity }}x</span>
-                <span class="item-price">@ &#36;{{ item.price.toFixed(2) }}</span>
-                <span class="total-price">&#36;{{ totalCost[index].toFixed(2) }}</span>
+              <div class="d-flex flex-column gap-2">
+                <h3>{{ item.name }}</h3>
+                <div class="span-group">
+                  <span class="item-quantity">{{ item.quantity }}x</span>
+                  <span class="item-price">@ &#36;{{ item.price.toFixed(2) }}</span>
+                  <span class="total-price">&#36;{{ totalCost[index].toFixed(2) }}</span>
+                </div>
               </div>
-            </div>
-            <button type="button" class="remove-btn" @click="decrementCart(index)">
-              <img src="../../assets/images/icon-remove-item.svg" />
-            </button>
+              <button type="button" class="remove-btn" @click="decrementCart(index)">
+                <img src="../../assets/images/icon-decrement-quantity.svg" />
+              </button>
             </li>
           </ul>
         </div>

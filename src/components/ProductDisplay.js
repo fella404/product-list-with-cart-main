@@ -13,7 +13,7 @@ export default {
   template:
     /* html */
     `
-    <main class="product-container">
+    <div class="product-container">
       <div class="card" v-for="(datum, index) in productData" :key="index">
         <img class="card-img" :src="datum.image.mobile" :alt="datum.name" />
         <div class="card-body">
@@ -30,6 +30,6 @@ export default {
           Add to Cart
         </button>
       </div>
-    </main>
+    </div>
   `,
 };
