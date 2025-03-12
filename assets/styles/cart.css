@@ -57,6 +57,21 @@ li h3 {
   border-radius: 50%;
 }
 
+.confirm-order-btn {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  font-weight: 600;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 30px;
+}
+
+.confirm-order-btn:hover {
+  color: white;
+  background-color: hsl(14, 86%, 38%);
+}
+
 ul li button img {
   filter: invert(36%) sepia(12%) saturate(463%) hue-rotate(334deg)
     brightness(91%) contrast(85%);
