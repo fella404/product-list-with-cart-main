@@ -40,14 +40,6 @@
   border: 1px solid hsl(7, 20%, 60%);
 }
 
-/* .selected-btn {
-  background-color: hsl(14, 86%, 42%);
-  justify-content: space-between;
-  gap: 0;
-  color: hsl(20, 50%, 98%);
-  border: 1px solid hsl(14, 86%, 42%);
-} */
-
 @media (max-width: 576px) {
   .product-container {
     grid-template-columns: 1fr;
