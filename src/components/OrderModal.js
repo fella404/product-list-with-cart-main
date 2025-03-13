@@ -31,7 +31,7 @@ export default {
     /* html */
     `
     <div class="modal" :class="{ show: isModalOpen, 'd-block': isModalOpen }" id="myModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
         <div class="modal-content">
           <div class="modal-body ">
             <form class="d-flex flex-column gap-3">
@@ -44,10 +44,10 @@ export default {
                 <ul style="gap: 0">
                   <li
                   v-for="(item, index) in cart"
-                  class="d-flex p-4"
+                  class="d-flex p-4 modal-list-item"
                   style="background-color: hsl(20, 50%, 98%);"
                   >
-                    <div class="d-flex gap-4">
+                    <div class="d-flex gap-4 modal-list">
                       <img
                         style="border-radius: 10px; width 50px; height: 50px;"
                         :src="item.image.thumbnail"
