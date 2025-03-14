@@ -10,8 +10,8 @@ export default {
     },
   },
   methods: {
-    logCart() {
-      console.log(this.cart);
+    closeModal() {
+      this.$emit("close-modal");
     },
   },
   computed: {
@@ -19,12 +19,7 @@ export default {
       return this.cart.map((item) => item.price * item.quantity);
     },
     costTotal() {
-      let total = 0;
-      this.cart.forEach((item) => {
-        total += item.quantity * item.price;
-      });
-
-      return total;
+      return this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     },
   },
   template:
@@ -44,6 +39,7 @@ export default {
                 <ul style="gap: 0">
                   <li
                   v-for="(item, index) in cart"
+                  :key="item.name"
                   class="d-flex p-4 modal-list-item"
                   style="background-color: hsl(20, 50%, 98%);"
                   >
@@ -71,7 +67,7 @@ export default {
                   <span class="h1"><strong>&#36;{{costTotal.toFixed(2) }}</strong></span>
                 </div>
               </div>
-              <button class="btn confirm-order-btn">Start New Order</button>
+              <button class="btn confirm-order-btn" @click="closeModal">Start New Order</button>
             </form>
           </div>
         </div>

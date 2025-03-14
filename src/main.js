@@ -17,26 +17,27 @@ createApp({
     };
   },
   mounted() {
-    fetch("../data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        this.data = data;
-      })
-      .catch((err) => console.error(`Error: ${err}`));
+    this.fetchData();
   },
   methods: {
+    async fetchData() {
+      try {
+        const response = await fetch("../data.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.data = await response.json();
+      } catch (err) {
+        console.error(`Error fetching data: ${err}`);
+      }
+    },
     addToCart(data) {
       const existingProduct = this.cart.find((item) => item.name === data.name);
 
       if (existingProduct) {
         existingProduct.quantity++;
       } else {
-        this.cart.push({
-          name: data.name,
-          image: data.image,
-          price: data.price,
-          quantity: 1,
-        });
+        this.cart.push({ ...data, quantity: 1 });
       }
     },
     decrementCart(index) {
@@ -49,6 +50,9 @@ createApp({
     openModal() {
       this.isModalOpen = true;
     },
+    closeModal() {
+      this.isModalOpen = false;
+    },
   },
   template: `
     <h1>Desserts</h1>
@@ -57,7 +61,7 @@ createApp({
 
       <cart :cart="cart" @decrement-cart="decrementCart" @open-modal="openModal" style="flex: 1; align-self: flex-start;"></cart>
 
-      <order-modal :cart="cart" :is-modal-open="isModalOpen"></order-modal>
+      <order-modal :cart="cart" :is-modal-open="isModalOpen" @close-modal="closeModal"></order-modal>
     </main>
   `,
 }).mount("#app");

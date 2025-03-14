@@ -27,12 +27,7 @@ export default {
       return this.cart.map((item) => item.price * item.quantity);
     },
     costTotal() {
-      let total = 0;
-      this.cart.forEach((item) => {
-        total += item.quantity * item.price;
-      });
-
-      return total;
+      return this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
     },
   },
   template:
