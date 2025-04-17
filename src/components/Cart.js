@@ -27,7 +27,10 @@ export default {
       return this.cart.map((item) => item.price * item.quantity);
     },
     costTotal() {
-      return this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      return this.cart.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
     },
   },
   template:
@@ -41,7 +44,7 @@ export default {
         </div>
         <div v-else>
           <ul>
-            <li v-for="(item, index) in cart">
+            <li v-for="(item, index) in cart" :key="item.name">
               <div class="d-flex flex-column gap-2">
                 <h3>{{ item.name }}</h3>
                 <div class="span-group">
