@@ -39,7 +39,7 @@ export default {
       <aside class="cart-container bg-white ms-0">
         <h2 class="h4 m-0" style="color: hsl(14, 86%, 42%); font-weight: 700;">Your cart({{ totalCart }})</h2>
         <div v-if="cart.length === 0" class="d-flex flex-column align-items-center mt-4 gap-4">
-          <img src="../../assets/images/illustration-empty-cart.svg" class="" />
+          <img src="../../assets/images/illustration-empty-cart.svg" alt="empty cart illustration" />
           <p style="color: hsl(12, 20%, 44%); font-size: 14px; font-weight: 600; text-align: center; margin-bottom: 0;">Your added items will appear here</p>
         </div>
         <div v-else>
@@ -54,7 +54,7 @@ export default {
                 </div>
               </div>
               <button type="button" class="remove-btn" @click="decrementCart(index)">
-                <img src="../../assets/images/icon-decrement-quantity.svg" />
+                <img src="../../assets/images/icon-decrement-quantity.svg" alt="decrement-icon" />
               </button>
             </li>
           </ul>
@@ -63,7 +63,7 @@ export default {
             <span style="font-weight: 700;">&#36;{{ costTotal.toFixed(2) }}</span>
           </div>
           <div class="d-flex justify-content-center gap-2 py-3 px-4" style="background-color: hsl(20, 50%, 98%);">
-            <img src="../../assets/images/icon-carbon-neutral.svg" />
+            <img src="../../assets/images/icon-carbon-neutral.svg" alt="icon-carbon-neutral" />
             <span style="font-size: 14px;">This is a <strong>carbon-neutral</strong> delivery</span>
           </div>
           <button class="btn confirm-order-btn" @click="openModal">Confirm Order</button>

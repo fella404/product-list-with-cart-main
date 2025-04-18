@@ -26,7 +26,7 @@ export default {
           </span>
         </div>
         <button class="btn add-to-cart-btn" type="button" @click="addToCart(item)">
-          <img src="../../assets/images/icon-add-to-cart.svg">
+          <img src="../../assets/images/icon-add-to-cart.svg" alt="increment-icon">
           Add to Cart
         </button>
       </div>

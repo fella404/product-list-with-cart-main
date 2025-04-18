@@ -30,7 +30,7 @@ export default {
         <div class="modal-content">
           <div class="modal-body ">
             <form class="d-flex flex-column gap-3">
-              <img class="align-self-start" src="../../assets/images/icon-order-confirmed.svg" />
+              <img class="align-self-start" src="../../assets/images/icon-order-confirmed.svg" alt="order-confirmed-icon" />
               <div class="d-flex flex-column gap-2">
                 <h3 class="h1 fw-bolder m-0">Order Confirmed</h3>
                 <p class="m-0" style="color: hsl(12, 20%, 44%);">We hope you enjoy your food!</p>
@@ -47,6 +47,7 @@ export default {
                       <img
                         style="border-radius: 10px; width 50px; height: 50px;"
                         :src="item.image.thumbnail"
+                        :alt="item.name"
                       />
                       <div class="d-flex flex-column justify-content-between">
                         <p class="m-0 fw-bolder">{{ item.name }}</p>

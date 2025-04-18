@@ -55,7 +55,9 @@ createApp({
     },
   },
   template: `
-    <h1>Desserts</h1>
+    <header>
+      <h1>Desserts</h1>
+    </header>
     <main>
       <product-display :productData="data" @add-to-cart="addToCart" style="flex: 3;"></product-display>
 
